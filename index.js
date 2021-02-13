@@ -10,9 +10,22 @@ const yargs = require('yargs');
 yargs.command({
   command: 'add',
   describe: 'Add new item',
-  handler: function () {
-    console.log('New Item Added!');
+  builder: {
+    title: {
+      describe: 'item title',
+      demandOption: true,
+      type: 'string',
+    },
+    body: {
+      describe: 'item body',
+      demandOption: true,
+      type: 'string',
+    },
+  },
+  handler: function (argv) {
+    console.log('Title: ' + argv.title);
+    console.log('Body: ' + argv.body);
   },
 });
 
-console.log(yargs.argv);
+yargs.parse();
