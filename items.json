@@ -1,1 +1,5 @@
-{"title":"this is new title","body":"this is new body","id":4}
+[
+  { "title": "this is new title", "body": "this is new body", "id": 4 },
+  { "title": "Hello World", "body": "This is a random body text", "id": 0.3270444600285862 },
+  { "title": "Another World", "body": "Another body text", "id": 0.6308821311614528 }
+]
