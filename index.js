@@ -40,4 +40,20 @@ yargs.command({
   },
 });
 
+yargs.command({
+  command: 'remove',
+  describe: 'Remove item by title',
+  builder: {
+    title: {
+      describe: 'item title',
+      demandOption: true,
+      type: 'string',
+    },
+  },
+  handler: (argv) => {
+    handleItems.removeItemByTitle(argv.title);
+    console.log('Item removed');
+  },
+});
+
 yargs.parse();

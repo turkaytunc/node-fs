@@ -13,6 +13,14 @@ const addItem = (title, body, id) => {
   saveItems(items);
 };
 
+const removeItemByTitle = (title) => {
+  const items = loadItems();
+
+  const fileredItems = items.filter((item) => item.title != title);
+
+  saveItems(fileredItems);
+};
+
 const saveItems = (items) => {
   const jsonData = JSON.stringify(items);
 
@@ -32,4 +40,5 @@ const loadItems = () => {
 module.exports = {
   getItems,
   addItem,
+  removeItemByTitle,
 };
