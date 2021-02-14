@@ -35,7 +35,7 @@ yargs.command({
       type: 'string',
     },
   },
-  handler: function (argv) {
+  handler(argv) {
     handleItems.addItem(argv.title, argv.body, Math.random());
   },
 });
@@ -50,10 +50,11 @@ yargs.command({
       type: 'string',
     },
   },
-  handler: (argv) => {
+  handler(argv) {
     handleItems.removeItemByTitle(argv.title);
     console.log('Item removed');
   },
 });
+debugger;
 
 yargs.parse();
